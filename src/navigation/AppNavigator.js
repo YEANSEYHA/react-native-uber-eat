@@ -5,6 +5,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { Text } from "react-native";
 
 import { HomeNavigator } from "./home.navigator";
+import { SearchNavigator } from "./search.navigator";
+import { BasketNavigator } from "./basket.navigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -49,8 +51,8 @@ export const AppNavigator = () => (
       })}
     >
       <Tab.Screen name="Home" component={HomeNavigator} />
-      <Tab.Screen name="Home2" component={HomeNavigator} />
-      <Tab.Screen name="Home3" component={HomeNavigator} />
+      <Tab.Screen name="Browse" component={SearchNavigator} />
+      <Tab.Screen name="Baskets" component={BasketNavigator} />
     </Tab.Navigator>
   </NavigationContainer>
 );
