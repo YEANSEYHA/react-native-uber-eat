@@ -5,7 +5,7 @@ const BasketStack = createStackNavigator();
 
 export const BasketNavigator = () => {
   return (
-    <BasketStack.Navigator headerMode="none">
+    <BasketStack.Navigator screenOptions={{ headerShown: false }}>
       <BasketStack.Screen
         name="BasketHomeScreen"
         component={BasketHomeScreen}
