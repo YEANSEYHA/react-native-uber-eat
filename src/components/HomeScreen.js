@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { SingleFoodCard } from "./SingleFoodCard";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.optionContainer}>
         <View style={styles.buttonStyle}>
           <Text style={styles.buttonText}>Delivery</Text>
@@ -14,11 +15,21 @@ export const HomeScreen = () => {
           <Text style={styles.buttonText}>Dine-in</Text>
         </View>
       </View>
-    </View>
+      <SingleFoodCard navigation={navigation} />
+
+      <SingleFoodCard navigation={navigation} />
+      <SingleFoodCard navigation={navigation} />
+      <SingleFoodCard navigation={navigation} />
+      <SingleFoodCard navigation={navigation} />
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   optionContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
