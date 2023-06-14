@@ -6,9 +6,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { SingleFoodCard } from "./SingleFoodCard";
+import { DeliveryPage } from "./screens/Delivery/delivery.page";
 
-export const HomeScreen = ({ navigation }) => {
+export const HomeScreen = () => {
   const [activeButton, setActiveButton] = useState("Delivery");
 
   const handleButtonPress = (buttonName) => {
@@ -18,23 +18,11 @@ export const HomeScreen = ({ navigation }) => {
   const renderContent = () => {
     switch (activeButton) {
       case "Delivery":
-        return (
-          <View>
-            <SingleFoodCard navigation={navigation} />
-          </View>
-        );
+        return <DeliveryPage />;
       case "Pickup":
-        return (
-          <View>
-            <Text>Pickup Content</Text>
-          </View>
-        );
+        return <Text>Pickup Content</Text>;
       case "Dine-in":
-        return (
-          <View>
-            <Text>Dine-in Content</Text>
-          </View>
-        );
+        return <Text>Dine-in Content</Text>;
       default:
         return null;
     }
@@ -101,6 +89,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingBottom: 20,
+    backgroundColor: "white",
   },
   optionContainer: {
     flexDirection: "row",
@@ -109,18 +98,18 @@ const styles = StyleSheet.create({
   buttonStyle: {
     width: 100,
     height: 50,
-    backgroundColor: "black",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
+    color: "black",
   },
   activeButtonStyle: {
-    backgroundColor: "gray",
+    backgroundColor: "black",
   },
   buttonText: {
-    color: "white",
+    color: "black",
   },
   activeButtonText: {
-    color: "black",
+    color: "white",
   },
 });
