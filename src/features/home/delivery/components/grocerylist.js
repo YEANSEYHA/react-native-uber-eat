@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { FreshGroceries } from "./FreshGroceries"; // Assuming the FreshGroceries component is imported correctly
+import { FreshGroceries } from "./freshgroceries"; // Assuming the FreshGroceries component is imported correctly
 
 export const GroceryList = ({ data }) => {
   return (

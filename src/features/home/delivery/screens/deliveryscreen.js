@@ -3,11 +3,13 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { FontAwesome } from "react-native-vector-icons";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { FoodDetails } from "../FoodDetails";
-import { HorizontalViewList } from "../../features/Home/Delivery/HorizontalViewList";
-import { GroceryList } from "@components/GroceryList";
 
-export const DeliveryPage = () => {
+// import { HorizontalViewList } from "../../features/Home/Delivery/HorizontalViewList";
+import { HorizontalViewList } from "../components/horizontalviewlist";
+import { GroceryList } from "../components/grocerylist";
+import { FoodDetails } from "../components/fooddetails";
+
+export const DeliveryScreen = () => {
   const navigation = useNavigation();
   const data = [
     {
@@ -56,7 +58,7 @@ export const DeliveryPage = () => {
       >
         <View>
           <Image
-            source={require("../../../assets/Adjust.png")}
+            source={require("../../../../../assets/Adjust.png")}
             style={{ width: 30, height: 30 }}
           />
         </View>
@@ -80,7 +82,7 @@ export const DeliveryPage = () => {
         <View style={styles.itemContainer}>
           <View style={styles.imageContainer}>
             <Image
-              source={require("../../../assets/icon1.png")}
+              source={require("../../../../../assets/icon1.png")}
               style={styles.image}
               resizeMode="contain"
             />
@@ -92,7 +94,7 @@ export const DeliveryPage = () => {
         <View style={styles.itemContainer}>
           <View style={styles.imageContainer}>
             <Image
-              source={require("../../../assets/grocery.png")}
+              source={require("../../../../../assets/grocery.png")}
               style={styles.image}
               resizeMode="contain"
             />
@@ -121,7 +123,7 @@ export const DeliveryPage = () => {
           <View style={{ height: 75, backgroundColor: "white" }}>
             <View style={styles.imageContainer2}>
               <Image
-                source={require("../../../assets/convenience1.png")}
+                source={require("../../../../../assets/convenience1.png")}
                 style={styles.image}
                 resizeMode="contain"
               />
@@ -153,7 +155,7 @@ export const DeliveryPage = () => {
           <View style={{ height: 75, backgroundColor: "white" }}>
             <View style={styles.imageContainer2}>
               <Image
-                source={require("../../../assets/alcohol.png")}
+                source={require("../../../../../assets/alcohol.png")}
                 style={styles.image}
                 resizeMode="contain"
               />
@@ -185,7 +187,7 @@ export const DeliveryPage = () => {
           <View style={{ height: 75, backgroundColor: "white" }}>
             <View style={styles.imageContainer2}>
               <Image
-                source={require("../../../assets/pet.png")}
+                source={require("../../../../../assets/pet.png")}
                 style={styles.image}
                 resizeMode="contain"
               />

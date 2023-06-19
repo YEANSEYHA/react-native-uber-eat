@@ -26,7 +26,7 @@ export const CategoriesScreen = () => {
           <View style={{ height: 75, backgroundColor: "white" }}>
             <View style={styles.imageContainer2}>
               <Image
-                source={require("../../../../assets/convenience1.png")}
+                source={require("../../../../../assets/convenience1.png")}
                 style={styles.image}
                 resizeMode="contain"
               />
@@ -58,7 +58,7 @@ export const CategoriesScreen = () => {
           <View style={{ height: 75, backgroundColor: "white" }}>
             <View style={styles.imageContainer2}>
               <Image
-                source={require("../../../../assets/alcohol.png")}
+                source={require("../../../../../assets/alcohol.png")}
                 style={styles.image}
                 resizeMode="contain"
               />
@@ -90,7 +90,7 @@ export const CategoriesScreen = () => {
           <View style={{ height: 75, backgroundColor: "white" }}>
             <View style={styles.imageContainer2}>
               <Image
-                source={require("../../../../assets/pet.png")}
+                source={require("../../../../../assets/pet.png")}
                 style={styles.image}
                 resizeMode="contain"
               />

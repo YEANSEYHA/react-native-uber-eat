@@ -1,8 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
-
-import { HomeScreen } from "../components/HomeScreen";
-import { FoodDetails } from "../screens/FoodDetails";
-import { CategoriesScreen } from "../features/Home/Delivery/Category-Screen";
+import { HomeScreen } from "../features/home/screens/homescreen";
+import { FoodDetails } from "../features/home/delivery/components/fooddetails";
+import { CategoriesScreen } from "../features/home/delivery/screens/categoryscreen";
 
 const HomeStack = createStackNavigator();
 

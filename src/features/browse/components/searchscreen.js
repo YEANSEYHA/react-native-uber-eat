@@ -38,19 +38,6 @@ export const SearchScreen = () => {
   const itemWidth = Dimensions.get("window").width / 2 - 20;
   const itemHeight = itemWidth * 1.2; // Adjust the aspect ratio as needed
 
-  // const renderItem = ({ item }) => {
-  //   return (
-  //     <Card
-  //       style={[styles.itemContainer, { width: itemWidth, height: itemHeight }]}
-  //     >
-  //       <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
-  //       <Card.Content>
-  //         <Text>Breakfast and Brunch</Text>
-  //       </Card.Content>
-  //     </Card>
-  //   );
-  // };
-
   const renderItem = ({ item }) => {
     return (
       <View style={[styles.itemContainer, { width: itemWidth, height: 140 }]}>

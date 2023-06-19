@@ -10,7 +10,7 @@ export const BasketHomeScreen = () => {
         <Text style={styles.cartsText}>Carts</Text>
       </View>
       <View style={styles.imageContainer}>
-        <Image source={require("../../../assets/cart-image.png")}></Image>
+        <Image source={require("../../../../assets/cart-image.png")}></Image>
       </View>
       <View style={styles.addItemHeadingContainer}>
         <Text style={styles.addItemHeading}>Add Items to start a basket</Text>

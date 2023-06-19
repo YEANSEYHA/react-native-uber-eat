@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { BasketHomeScreen } from "../screens/Basket/Basket.Homescreen";
+
+import { BasketHomeScreen } from "../features/baskets/screens/basketscreen";
 
 const BasketStack = createStackNavigator();
 
