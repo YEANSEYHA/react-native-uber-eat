@@ -1,7 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
-
-import { FoodDetails } from "../components/screens/FoodDetails";
-import { SearchScreen } from "../components/screens/SearchScreen";
+import { FoodDetails } from "../screens/FoodDetails";
+import { SearchScreen } from "../screens/SearchScreen";
 
 const SearchStack = createStackNavigator();
 

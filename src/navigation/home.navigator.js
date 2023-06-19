@@ -1,7 +1,8 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { HomeScreen } from "../components/HomeScreen";
-import { FoodDetails } from "../components/screens/FoodDetails";
+import { FoodDetails } from "../screens/FoodDetails";
+import { CategoriesScreen } from "../features/Home/Delivery/Category-Screen";
 
 const HomeStack = createStackNavigator();
 
@@ -15,6 +16,10 @@ export const HomeNavigator = () => {
       <HomeStack.Screen
         name="FoodDetails"
         component={FoodDetails}
+      ></HomeStack.Screen>
+      <HomeStack.Screen
+        name="CategoriesScreen"
+        component={CategoriesScreen}
       ></HomeStack.Screen>
     </HomeStack.Navigator>
   );

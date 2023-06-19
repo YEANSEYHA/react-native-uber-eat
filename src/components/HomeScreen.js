@@ -6,7 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { DeliveryPage } from "./screens/Delivery/delivery.page";
+import { DeliveryPage } from "../screens/Delivery/delivery.page";
 
 export const HomeScreen = () => {
   const [activeButton, setActiveButton] = useState("Delivery");
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     width: 100,
-    height: 50,
+    height: 40,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
