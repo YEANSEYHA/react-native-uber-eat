@@ -1,7 +1,7 @@
 import React from "react";
 import { View, FlatList, StyleSheet } from "react-native";
 
-import { SingleCardMenu } from "../components/SingleCardMenu";
+import SingleCardMenu from "@components/SingleCardMenu";
 
 export const FoodDetails = ({ navigation }) => {
   return (

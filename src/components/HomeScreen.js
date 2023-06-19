@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import { DeliveryPage } from "../screens/Delivery/delivery.page";
 
@@ -29,59 +30,61 @@ export const HomeScreen = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.optionContainer}>
-        <TouchableOpacity
-          style={[
-            styles.buttonStyle,
-            activeButton === "Delivery" && styles.activeButtonStyle,
-          ]}
-          onPress={() => handleButtonPress("Delivery")}
-        >
-          <Text
+    <SafeAreaView>
+      <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.optionContainer}>
+          <TouchableOpacity
             style={[
-              styles.buttonText,
-              activeButton === "Delivery" && styles.activeButtonText,
+              styles.buttonStyle,
+              activeButton === "Delivery" && styles.activeButtonStyle,
             ]}
+            onPress={() => handleButtonPress("Delivery")}
           >
-            Delivery
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styles.buttonStyle,
-            activeButton === "Pickup" && styles.activeButtonStyle,
-          ]}
-          onPress={() => handleButtonPress("Pickup")}
-        >
-          <Text
+            <Text
+              style={[
+                styles.buttonText,
+                activeButton === "Delivery" && styles.activeButtonText,
+              ]}
+            >
+              Delivery
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={[
-              styles.buttonText,
-              activeButton === "Pickup" && styles.activeButtonText,
+              styles.buttonStyle,
+              activeButton === "Pickup" && styles.activeButtonStyle,
             ]}
+            onPress={() => handleButtonPress("Pickup")}
           >
-            Pickup
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styles.buttonStyle,
-            activeButton === "Dine-in" && styles.activeButtonStyle,
-          ]}
-          onPress={() => handleButtonPress("Dine-in")}
-        >
-          <Text
+            <Text
+              style={[
+                styles.buttonText,
+                activeButton === "Pickup" && styles.activeButtonText,
+              ]}
+            >
+              Pickup
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             style={[
-              styles.buttonText,
-              activeButton === "Dine-in" && styles.activeButtonText,
+              styles.buttonStyle,
+              activeButton === "Dine-in" && styles.activeButtonStyle,
             ]}
+            onPress={() => handleButtonPress("Dine-in")}
           >
-            Dine-in
-          </Text>
-        </TouchableOpacity>
-      </View>
-      {renderContent()}
-    </ScrollView>
+            <Text
+              style={[
+                styles.buttonText,
+                activeButton === "Dine-in" && styles.activeButtonText,
+              ]}
+            >
+              Dine-in
+            </Text>
+          </TouchableOpacity>
+        </View>
+        {renderContent()}
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-export const SingleCardMenu = () => {
+const SingleCardMenu = () => {
   return (
     <View style={styles.container}>
       <View style={styles.heartIcon}>
@@ -103,3 +103,5 @@ const styles = StyleSheet.create({
     color: "#6B6B6B",
   },
 });
+
+export default SingleCardMenu;

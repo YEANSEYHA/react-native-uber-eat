@@ -1,16 +1,49 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 import { FontAwesome } from "react-native-vector-icons";
-import { SvgXml } from "react-native-svg";
-
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FoodDetails } from "../FoodDetails";
-
 import { HorizontalViewList } from "../../features/Home/Delivery/HorizontalViewList";
+import { GroceryList } from "@components/GroceryList";
 
 export const DeliveryPage = () => {
   const navigation = useNavigation();
+  const data = [
+    {
+      title: "Order from Restaurant 1",
+      description: "Browse offer 1",
+      image:
+        "https://previews.123rf.com/images/puhhha/puhhha1802/puhhha180200064/94675512-people-eating-healthy-food-on-outdoor-party-young-smiling-friends-enjoying-food-and-drinks-having.jpg",
+    },
+    {
+      title: "Order from Restaurant 2",
+      description: "Browse offer 2",
+      image:
+        "https://previews.123rf.com/images/puhhha/puhhha1802/puhhha180200064/94675512-people-eating-healthy-food-on-outdoor-party-young-smiling-friends-enjoying-food-and-drinks-having.jpg",
+    },
+  ];
+  const groceryData = [
+    {
+      imageSource:
+        "https://static.vecteezy.com/system/resources/previews/005/104/874/original/fresh-pineapple-illustration-suitable-for-decoration-sticker-icon-and-others-free-vector.jpg",
+      title: "Organic Pineapple",
+      price: "$9.00",
+    },
+    {
+      imageSource:
+        "https://static.vecteezy.com/system/resources/previews/005/104/874/original/fresh-pineapple-illustration-suitable-for-decoration-sticker-icon-and-others-free-vector.jpg",
+      title: "Fresh Apples",
+      price: "$5.99",
+    },
+    {
+      imageSource:
+        "https://static.vecteezy.com/system/resources/previews/005/104/874/original/fresh-pineapple-illustration-suitable-for-decoration-sticker-icon-and-others-free-vector.jpg",
+      title: "Fresh Apples",
+      price: "$5.99",
+    },
+    // Add more grocery items as needed
+  ];
 
   return (
     <View>
@@ -43,7 +76,6 @@ export const DeliveryPage = () => {
           <Text style={styles.text}>London Hall</Text>
         </View>
       </View>
-
       <View style={styles.container}>
         <View style={styles.itemContainer}>
           <View style={styles.imageContainer}>
@@ -211,10 +243,10 @@ export const DeliveryPage = () => {
           </TouchableOpacity>
         </View>
       </View>
-      {/* <FoodDetails /> */}
-      {/* Slider Card Section */}
       <FoodDetails />
-      <HorizontalViewList />
+      <HorizontalViewList data={data} />
+      <Text style={styles.heading}>Fresh groceries</Text>
+      <GroceryList data={groceryData} />
     </View>
   );
 };
@@ -275,5 +307,14 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     color: "black", // Customize dot color if needed
     paddingHorizontal: 5, // Adjust the spacing around the dot if needed
+  },
+  heading: {
+    fontFamily: "Uber Move Text",
+    fontStyle: "normal",
+    fontWeight: "700",
+    fontSize: 24.8279,
+    lineHeight: 37,
+    color: "#000000",
+    marginLeft: 10,
   },
 });
