@@ -1,24 +1,46 @@
 import { View, Text, Image, StyleSheet, Button } from "react-native";
+import { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const BasketHomeScreen = () => {
+  const [cartItem, setCartItem] = useState(0);
+
+  useEffect(() => {
+    // Try to get the local storage of cart in the screen
+    const retrieveCart = async () => {
+      try {
+        const value = await AsyncStorage.getItem("amountItem");
+        console.log("Retrieve the total amount", value);
+        if (value !== null) {
+          setCartItem(parseInt(value)); // Convert value to a number
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    retrieveCart();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.orders}>
         <Text>Orders</Text>
       </View>
+      <Text>Total cart: {cartItem}</Text>
       <View style={styles.cartsContainer}>
         <Text style={styles.cartsText}>Carts</Text>
       </View>
       <View style={styles.imageContainer}>
-        <Image source={require("../../../../assets/cart-image.png")}></Image>
+        <Image source={require("../../../../assets/cart-image.png")} />
       </View>
       <View style={styles.addItemHeadingContainer}>
         <Text style={styles.addItemHeading}>Add Items to start a basket</Text>
       </View>
       <View style={styles.descriptionItemContainer}>
         <Text style={styles.descriptionText}>
-          Once you add item from a restaurant or store, your basket will appear
-          here
+          Once you add an item from a restaurant or store, your basket will
+          appear here
         </Text>
       </View>
       <View style={styles.containerButton}>
@@ -27,7 +49,6 @@ export const BasketHomeScreen = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

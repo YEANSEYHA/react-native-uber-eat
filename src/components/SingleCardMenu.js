@@ -1,35 +1,44 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const SingleCardMenu = () => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <View style={styles.heartIcon}>
-        <AntDesign name="heart" size={24} color="white" />
-      </View>
-      <View style={styles.rewardContainer}>
-        <Text style={styles.rewardText}>5 orders until $5 reward</Text>
-      </View>
-      <View style={styles.imageContainer}>
-        <Image
-          source={{
-            uri: "https://previews.123rf.com/images/puhhha/puhhha1802/puhhha180200064/94675512-people-eating-healthy-food-on-outdoor-party-young-smiling-friends-enjoying-food-and-drinks-having.jpg",
-          }}
-          style={styles.image}
-          resizeMode="cover"
-        />
-      </View>
-      <View style={styles.detailsContainer}>
-        <View style={styles.detailsRow}>
-          <Text style={styles.restaurantName}>Cardinal Chips</Text>
-          <View style={styles.ratingContainer}>
-            <Text style={styles.ratingText}>4.4</Text>
-          </View>
+    <TouchableOpacity
+      onPress={() => {
+        console.log("Click Food Details");
+        navigation.navigate("RestaurantDetail");
+      }}
+    >
+      <View style={styles.container}>
+        <View style={styles.heartIcon}>
+          <AntDesign name="heart" size={24} color="white" />
         </View>
-        <Text style={styles.deliveryText}>$0.29 Delivery Fee. 10-25 min</Text>
+        <View style={styles.rewardContainer}>
+          <Text style={styles.rewardText}>5 orders until $5 reward</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={{
+              uri: "https://previews.123rf.com/images/puhhha/puhhha1802/puhhha180200064/94675512-people-eating-healthy-food-on-outdoor-party-young-smiling-friends-enjoying-food-and-drinks-having.jpg",
+            }}
+            style={styles.image}
+            resizeMode="cover"
+          />
+        </View>
+        <View style={styles.detailsContainer}>
+          <View style={styles.detailsRow}>
+            <Text style={styles.restaurantName}>Cardinal Chips</Text>
+            <View style={styles.ratingContainer}>
+              <Text style={styles.ratingText}>4.4</Text>
+            </View>
+          </View>
+          <Text style={styles.deliveryText}>$0.29 Delivery Fee. 10-25 min</Text>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

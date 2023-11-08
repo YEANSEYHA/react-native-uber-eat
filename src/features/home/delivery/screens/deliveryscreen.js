@@ -3,8 +3,6 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { FontAwesome } from "react-native-vector-icons";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-// import { HorizontalViewList } from "../../features/Home/Delivery/HorizontalViewList";
 import { HorizontalViewList } from "../components/horizontalviewlist";
 import { GroceryList } from "../components/grocerylist";
 import { FoodDetails } from "../components/fooddetails";
