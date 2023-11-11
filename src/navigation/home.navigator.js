@@ -3,6 +3,7 @@ import { HomeScreen } from "../features/home/screens/homescreen";
 import { FoodDetails } from "../features/home/delivery/components/fooddetails";
 import { CategoriesScreen } from "../features/home/delivery/screens/categoryscreen";
 import { RestaurantDetail } from "../features/home/components/restaurant_detail";
+import { ItemDetails } from "../Screens/ItemDetails";
 
 const HomeStack = createStackNavigator();
 
@@ -24,6 +25,10 @@ export const HomeNavigator = () => {
       <HomeStack.Screen
         name="RestaurantDetail"
         component={RestaurantDetail}
+      ></HomeStack.Screen>
+      <HomeStack.Screen
+        name="ItemDetails"
+        component={ItemDetails}
       ></HomeStack.Screen>
     </HomeStack.Navigator>
   );

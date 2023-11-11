@@ -9,7 +9,7 @@ const SingleCardMenu = () => {
     <TouchableOpacity
       onPress={() => {
         console.log("Click Food Details");
-        navigation.navigate("RestaurantDetail");
+        navigation.navigate("ItemDetails");
       }}
     >
       <View style={styles.container}>
