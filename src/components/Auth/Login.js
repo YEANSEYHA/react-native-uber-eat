@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import MiddleLineText from "../MiddleLineText";
-
 import PhoneInput from "react-native-phone-number-input";
 import { AntDesign } from "@expo/vector-icons";
 

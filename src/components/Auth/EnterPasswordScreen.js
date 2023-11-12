@@ -13,11 +13,15 @@ import {
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { updateAuthentication } from "../../redux/Auth/auth";
 
 const EnterPasswordScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState();
   const { navigate } = useNavigation();
+
+  const dispatch = useDispatch();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -30,6 +34,10 @@ const EnterPasswordScreen = () => {
   useEffect(() => {
     Keyboard.dismiss();
   }, []);
+
+  const handleClickedLogin = () => {
+    dispatch(updateAuthentication());
+  };
 
   return (
     <KeyboardAvoidingView
@@ -82,7 +90,10 @@ const EnterPasswordScreen = () => {
               >
                 <AntDesign name="arrowleft" size={24} color="black" />
               </Pressable>
-              <Pressable style={styles.arrowContainerNext}>
+              <Pressable
+                onPress={handleClickedLogin}
+                style={styles.arrowContainerNext}
+              >
                 <Text style={styles.nextTitle}>Next</Text>
                 <AntDesign name="arrowright" size={24} color="#7F7F7F" />
               </Pressable>
