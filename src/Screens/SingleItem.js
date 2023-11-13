@@ -1,10 +1,21 @@
 import { View, Text, Image, Button, StyleSheet, Pressable } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import {
+  saveDataToLocalStorage,
+  getDataFromLocalStorage,
+} from "../utils/LocalStorageUtil";
 
 export const SingleItem = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItem, setTotalItem] = useState(1);
   const [singlePrice, setSinglePrice] = useState(5);
+  const navigation = useNavigation();
+
+  useEffect(async () => {
+    const res = await getDataFromLocalStorage("single_item");
+    console.log("log res", res);
+  }, []);
 
   const handleAddItem = () => {
     let newAmount = totalItem + 1;
@@ -21,13 +32,30 @@ export const SingleItem = () => {
     return totalPrice;
   };
 
+  const addedItemToBasket = async () => {
+    console.log("Log user press on Baskets");
+    const item = {
+      id: 1,
+      name: "Football2",
+    };
+    await saveDataToLocalStorage(item, "single_item");
+  };
+
+  const handleBackToHomeScreen = () => {
+    console.log("Log user press on Cross");
+    navigation.navigate("HomeScreen");
+  };
+
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Image
-          source={require("../../assets/images/Times.png")}
-          resizeMode="contain"
-        />
+        <Pressable onPress={handleBackToHomeScreen}>
+          <Image
+            source={require("../../assets/images/Times.png")}
+            resizeMode="contain"
+          />
+        </Pressable>
+
         <Image
           source={require("../../assets/images/Cart.png")}
           resizeMode="contain"
@@ -63,11 +91,28 @@ export const SingleItem = () => {
 
         <Text>{caculatePrice(totalItem)}$</Text>
       </View>
+      <Pressable
+        onPress={addedItemToBasket}
+        style={{
+          backgroundColor: "black",
+          padding: 20,
+          margin: 20,
+          borderRadius: 10,
+        }}
+      >
+        <Text style={{ color: "white", textAlign: "center", fontSize: 18 }}>
+          Add {totalItem} to basket
+        </Text>
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "white",
+    flex: 1,
+  },
   headerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
